@@ -1,0 +1,38 @@
+appId: com.nutrisense.beta
+---
+- runFlow: ResgistrationFlow.yaml
+- tapOn: "I have a CGM"
+- tapOn: "FreeStyle Libre 1 option"
+- "scroll"
+- tapOn: "Next"
+- tapOn:
+    point: "85%,55%"
+- tapOn:
+    point: "86%,68%"
+- tapOn: "Next"
+- tapOn: "Start my free trial"
+- assertVisible: "Checkout"
+- tapOn:
+    text: "Add"
+    index: 0
+- tapOn: ", Card number"
+- inputText: "4242424242424242"
+- tapOn: "MM/YY"
+- inputText: "02/30"
+- tapOn: "CVC"
+- inputText: "256"
+- tapOn: "Add Card"
+- tapOn: "Add"
+- tapOn: "53 Fox Hill Lane"
+- inputText: "Gf"
+- tapOn: "GFD Memorial Boulevard, Gallatin, TN, USA"
+- "scroll"
+- tapOn:
+    point: "50%,82%"
+- inputText: "7606835654"
+- "hideKeyboard"
+- tapOn: "Save"
+- tapOn: "Sign Up"
+- stopApp: 
+    appId: "com.nutrisense.beta"
+- stopRecording

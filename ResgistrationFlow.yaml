@@ -1,0 +1,33 @@
+appId: com.nutrisense.beta
+---
+- launchApp:
+    appId: "com.nutrisense.beta"
+    clearState: true
+- startRecording: recording
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 30000 
+- tapOn: "Skip"
+- tapOn:
+    point: "50%,20%"
+- tapOn: "Production"
+- tapOn: "Staging"
+- assertVisible: "Endpoint changed to 'staging'"
+- tapOn: "Sign Up with Email"
+- tapOn: "Enter your first name"
+- inputText: "${FIRST_NAME}"
+- tapOn: "Enter your last name"
+- inputText: "${LAST_NAME}"
+- tapOn: "Enter your email address"
+- inputText: "${EMAIL}"
+- "hideKeyboard"
+- tapOn: "Set your password"
+- inputText: "${PASSWORD}"
+- "scroll"
+- tapOn:
+    point: "8%,77%"
+- tapOn: "Create Account"
+- extendedWaitUntil:
+    visible: "Sign Out"  # Validate the 'Sign Out' button or option appears
+    timeout: 30000
+
